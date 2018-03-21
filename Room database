@@ -1,0 +1,94 @@
+import android.arch.persistence.room.Room;
+
+
+ protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        initUIControls();
+
+        dataBaseHelper =
+                Room.databaseBuilder(this, DataBaseHelper.class, "LeaderboardUser")
+                        .allowMainThreadQueries()   //no need to add your code in aync task or handler
+                        .build();
+
+
+        calLWebserviceForGetData();
+
+    }
+    
+    
+    private void calLWebserviceForGetData() {
+
+        if (isNetworkAvailable(this)) {
+
+
+         
+
+  
+
+            HashMap<String, String> params = new HashMap<>();
+            params.put("action", "get_leaderboard");
+            params.put("page_number", "1");
+            params.put("last_rank", "21");
+            params.put("member_id", "65");
+
+            Call<JsonObject> call = api.getAllData(params);
+            call.enqueue(new Callback<JsonObject>() {
+                @Override
+                public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                    try {
+                        JSONObject jsonObject = new JSONObject(String.valueOf(response.body()));
+                        //Log.d(TAG, "onResponse: " + jsonObject);
+                        UserBean userBean = getDataBean(jsonObject.toString());
+                        Log.d(TAG, "onResponse leaderboard size: " + userBean.getData().getLeaderboard().size());
+
+                        insertDataIntoDb(userBean.getData().getLeaderboard()); // room database method call 
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<JsonObject> call, Throwable t) {
+                    if (t instanceof SocketTimeoutException) {
+                        Toast.makeText(MainActivity.this, "Time out error", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        } else {
+            Toast.makeText(this, "No internet connection detected", Toast.LENGTH_SHORT).show();
+        }
+
+
+    }   //end of calLWebserviceForGetData
+
+    
+    
+     /***
+     * insert data into db
+     * @param leaderboard
+     */
+    private void insertDataIntoDb(List<UserBean.Leaderboard> leaderboard) {
+
+        ArrayList<User> arrayList = new ArrayList<>();
+        for (int i = 0; i < leaderboard.size(); i++) {
+            User user = new User();
+            user.setId(leaderboard.get(i).getMember_id());
+            user.setName(leaderboard.get(i).getName());
+            user.setPicturePath(leaderboard.get(i).getProfile_pic());
+            arrayList.add(user);
+        }
+
+        dataBaseHelper.getUserData().clearAllTableData();   //clear before insert
+
+        dataBaseHelper.getUserData().insertAllData(arrayList);  // insert all data
+
+        Log.d(TAG, "insertDataIntoDb : " + dataBaseHelper.getUserData().getAllUserData().size());
+        if (dataBaseHelper.getUserData().getAllUserData().size() > 0) {
+            setAdapter();
+        }
+
+    }   //end of insertDataIntoDb
