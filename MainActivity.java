@@ -1,144 +1,69 @@
-package com.example.brijesh.datetimepicker;
+package com.company.ecommerce.recyclerviewdemo;
 
-import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.content.Context;
+import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.TimePicker;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toolbar;
 
-import java.util.Calendar;
+import java.util.ArrayList;
 
+public class MainActivity extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    RecyclerView recyclerView;
+    RecyclerView.Adapter adapter;
+    Context context;
+    RecyclerView.LayoutManager layoutManager;
+    ArrayList<DataProvider> list = new ArrayList<DataProvider>();
 
-
-    EditText date, time;
-    Button datepicker, timepicker;
-
-    DatePickerDialog datePickerDialog;
-    TimePickerDialog timePickerDialog;
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-
-        date = (EditText) findViewById(R.id.txtdate);
-        time = (EditText) findViewById(R.id.txttime);
-
-        datepicker = (Button) findViewById(R.id.btn_date);
-        timepicker = (Button) findViewById(R.id.btn_time);
-
-        datepicker.setOnClickListener(this);
-        timepicker.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-
-        switch (v.getId()) {
-            case R.id.btn_date:
-                Calendar calendar = Calendar.getInstance();
-                int year = calendar.get(Calendar.YEAR);
-                int month = calendar.get(Calendar.MONTH);
-                int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-                datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year1, int monthofyear, int dayofmonth) {
-                        date.setText(dayofmonth + "/" + (monthofyear + 1) + "/" + year1);
-                    }
-                }, year, month, day);
-                datePickerDialog.show();
-
-
-                break;
-            case R.id.btn_time:
-
-
-                Calendar calendar1 = Calendar.getInstance();
-                int hour = calendar1.get(Calendar.HOUR);
-                int minute = calendar1.get(Calendar.MINUTE);
-                //int ampm=calendar1.get(Calendar.AM_PM);
-
-                timePickerDialog = new TimePickerDialog(MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int hourofday, int minuteof) {
-                        time.setText(hourofday + ":" + minuteof);
-                    }
-                }, hour, minute, false);
-                timePickerDialog.show();
-                break;
-        }
-    }
-
-
-    //Calendar mCurrentDate;
-
-
-   /* private final String TAG = "DemoNewPicker";
-    private Button datepicker, timepicker;
-    private TextView text;
-    private DatePickerDialog.OnDateSetListener mDateSetListener;
+    int[] image_id = {R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4};
+    String[] name, description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        datepicker=(Button)findViewById(R.id.btn_date);
-        //datepicker.setOnClickListener(MainActivity.this);
 
-        text =(TextView)findViewById(R.id.textView2);
+        name = getResources().getStringArray(R.array.name);
+        description = getResources().getStringArray(R.array.description);
+        int count = 0;
+        for (String Name : name) {
 
-        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            DataProvider dataProvider = new DataProvider(image_id[count], Name, description[count]);
+            count++;
+            list.add(dataProvider);
+
+
+        }
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        adapter = new DataAdapter(list, context);
+        recyclerView.setAdapter(adapter);
+
+
+        //toolbar=(Toolbar)findViewById(R.id.toolbar);
+        //toolbar.setTitle(getResources().getString((R.string.app_name)));
+
+        // listView = (ListView) findViewById(R.id.listview);
+      /*  DataAdapter adapter = new DataAdapter(this);
+
+        listView.setAdapter(adapter);
+       listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
-                Log.d(TAG, "ondateSet : mm/dd/yyyy:" + month + "/" + day + "/" + year);
-                String date = month + "/" + day + "/" + year;
-                text.setText(date);
-
-
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent=new Intent(getApplicationContext(),RecyclerActivity.class);
+                intent.putExtra("Position",listView.getItemAtPosition(i).toString());
+                startActivity(intent);
             }
-        };
+        });*/
     }
-
-
-
-        @RequiresApi(api = Build.VERSION_CODES.N)
-
-
-        public void onClick (View view){
-
-        GregorianCalendar cal = (GregorianCalendar) GregorianCalendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH);
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-        int ampm = cal.get(Calendar.AM_PM);
-
-        DatePickerDialog dialog = new DatePickerDialog(MainActivity.this,
-                android.R.style.Theme_DeviceDefault_Dialog, mDateSetListener,
-                year,
-                month,
-                day);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.show();
-    }*/
-
 }
-
-
-
-
-
-
-
-
-
-
