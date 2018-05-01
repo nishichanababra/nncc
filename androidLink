@@ -27,3 +27,12 @@ ctrl+shift+J for variable formatting
 
 
 https://www.simplifiedcoding.net/react-native-android-tutorial/
+
+Installing react-native CLI
+This involves the installation of react-native command line tools. These are required for the creation of a new project and then to debug the project. To do so,
+
+Open command prompt and type npm install -g react-native-cli
+
+
+https://www.simplifiedcoding.net/react-native-tutorial-structure-basic-ui/
+
