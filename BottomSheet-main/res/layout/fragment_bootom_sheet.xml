@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/TNL_username"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_toEndOf="@+id/tv_icon_pass"
+        android:layout_toRightOf="@+id/tv_icon_pass">
+
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/Tedt_username"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="@string/username_fragment"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLength="49"
+        android:maxLines="1"
+        android:nextFocusDown="@+id/Tedt_password"
+        android:textSize="20sp" />
+
+
+</android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@+id/TNL_password"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="25dp"
+        android:onClick="loginButtonClick"
+        android:text="@string/ok"
+        android:textColor="@color/colorWhite" />
+
+
+</LinearLayout>
