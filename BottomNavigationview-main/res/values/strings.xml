@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BottomNavigationView</string>
+
+    <string name="title_shop">Shop</string>
+    <string name="title_gifts">Gifts</string>
+    <string name="title_cart">Cart</string>
+    <string name="title_profile">Profile</string>
+
+    <string name="username_fragment">Username</string>
+    <string name="ok">OK</string>
+</resources>
