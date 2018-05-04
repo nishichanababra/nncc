@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="app.citta.utilities">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/cittalogo"
+        android:label="@string/app_name"
+        android:persistent="true"
+        android:roundIcon="@mipmap/cittalogo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- **********************   Activities   ************************** -->
+        <activity
+            android:name="app.citta.utilities.GeneralizedModules.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="app.citta.utilities.GeneralizedModules.MainActivity.Activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="app.citta.utilities.GeneralizedModules.ImageOperations.Activity.ImageUpload" />
+        <activity android:name="app.citta.utilities.GeneralizedModules.ImageOperations.Activity.ShrinkAndScaleImages" />
+        <activity android:name="app.citta.utilities.GeneralizedModules.Barcode.Activity.BarcodeScanner" />
+        <activity android:name="app.citta.utilities.GeneralizedModules.ImageOperations.Activity.DownloadImage" />
+        <activity android:name="app.citta.utilities.GeneralizedModules.NavigationDrawer.Activity.NavigationDrawer" />
+        <activity android:name="app.citta.utilities.GeneralizedModules.SendOTP.Activity.SendOTP" />
+        <activity android:name="app.citta.utilities.GeneralizedModules.Localizations.Activity.LocalizationForLanguages" />
+        <activity android:name="app.citta.utilities.GeneralizedModules.TabLayout.Activity.TabLayout" />
+        <activity android:name="app.citta.utilities.GeneralizedModules.GoogleMap.Activity.ShowLocationOnGoogleMap" />
+        <activity android:name="app.citta.utilities.GeneralizedModules.UpdateLocation.Activity.UpdateLocationViaBackgroundService" />
+        <activity android:name="app.citta.utilities.GeneralizedModules.Firebase.Activity.FirebasePushNotification" />
+        <activity android:name="app.citta.utilities.GeneralizedModules.FingerPrint.Activity.FingerPrintActivity"/>
+        <activity android:name=".GeneralizedModules.FloationActionButton.Floationg_Action_Button_MainActivity" />
+
+        <!-- **********************   Recievers   ************************** -->
+        <receiver
+            android:name="app.citta.utilities.GeneralizedModules.SendOTP.Activity.SendOTP$AutoDetectOTP"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- **********************   Meta Data   ************************** -->
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- ******************************* Services **************************** -->
+
+        <service
+            android:name="app.citta.utilities.GeneralizedModules.UpdateLocation.Service.UpdateLocationBackgroundService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="app.citta.utilities.GeneralizedModules.Firebase.Service.MyFirebaseInstanceIdService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="app.citta.utilities.GeneralizedModules.Firebase.Service.MyFirebaseMessangingService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

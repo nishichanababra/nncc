@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/app_toolbar"
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <ImageView
+        android:layout_below="@+id/app_toolbar"
+        android:id="@+id/iv_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="false"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:id="@+id/btn_chooseimage"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_image"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/choose_image" />
+
+    <Button
+        android:id="@+id/btn_uploadImage"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_chooseimage"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/upload_image" />
+</RelativeLayout>

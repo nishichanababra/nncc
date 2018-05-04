@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10sp"
+    android:foreground="?android:attr/selectableItemBackground"
+    tools:context="app.citta.utilities.GeneralizedModules.Firebase.Activity.FirebasePushNotification">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.7"
+        android:background="@mipmap/firebase"
+        android:elevation="0dp">
+
+        <TextView
+            android:id="@+id/tv_token"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:alpha="1"
+            android:text="@string/token"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_firebaseToken"
+            android:layout_margin="5dp"
+            android:alpha="1"
+            android:text="@string/status"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_data"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_notificationStatus"
+            android:layout_margin="5dp"
+            android:alpha="1"
+            android:text="@string/message"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_notificationData"
+            android:layout_margin="5dp"
+            android:alpha="1"
+            android:text="@string/time"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_firebaseToken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@+id/tv_token"
+            android:alpha="1"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000" />
+
+        <TextView
+            android:id="@+id/tv_notificationStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_firebaseToken"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@+id/tv_status"
+            android:alpha="1"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000" />
+
+        <TextView
+            android:id="@+id/tv_notificationData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_notificationStatus"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@+id/tv_data"
+            android:alpha="1"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000" />
+
+        <TextView
+            android:id="@+id/tv_notificationTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_notificationData"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@+id/tv_time"
+            android:alpha="1"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

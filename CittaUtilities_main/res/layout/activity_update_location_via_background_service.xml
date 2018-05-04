@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.citta.utilities.GeneralizedModules.UpdateLocation.Activity.UpdateLocationViaBackgroundService">
+
+    <include layout="@layout/toolbar_main"
+        android:id="@+id/app_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </include>
+
+    <TextView
+        android:layout_below="@+id/app_toolbar"
+        android:id="@+id/tv_heading"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="15dp"
+        android:text="@string/this_background_service_for_update_your_location_will_update_ui_from_background" />
+
+    <TextView
+        android:id="@+id/tv_latitude"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tv_heading"
+        android:layout_margin="15dp" />
+
+    <TextView
+        android:id="@+id/tv_longitude"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tv_latitude"
+        android:layout_margin="15dp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tv_longitude"
+        android:layout_margin="15dp" />
+
+    <Button
+        android:id="@+id/btn_startService"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_time"
+        android:layout_margin="15dp"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:text="@string/start_service"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:id="@+id/btn_stopservice"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/tv_time"
+        android:layout_margin="15dp"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_toRightOf="@+id/btn_startService"
+        android:text="@string/button"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>
