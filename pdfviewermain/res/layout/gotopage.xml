@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/activity_horizontal_margin"
+    android:weightSum="1">
+
+
+    <EditText
+        android:id="@+id/edpageno"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:drawableTint="@color/colorPrimary"
+        android:ellipsize="end"
+        android:ems="10"
+       android:layout_margin="15dp"
+        android:hint="Enter Page No:"
+        android:inputType="number"
+        android:maxLines="5"
+        android:maxWidth="30dp"
+        android:textSize="16sp" />
+
+
+
+</RelativeLayout>
