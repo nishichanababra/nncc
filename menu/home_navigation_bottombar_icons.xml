@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_dashboard"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Dashboard" />
+
+  <!--  <item
+        android:id="@+id/menu_party"
+        android:icon="@drawable/ic_party"
+        android:title="Party" />
+
+    <item
+        android:id="@+id/menu_item"
+        android:icon="@drawable/ic_item"
+        android:title="Item" />-->
+
+    <item
+        android:id="@+id/menu_reports"
+        android:icon="@drawable/ic_reports"
+        android:title="Reports" />
+
+</menu>
