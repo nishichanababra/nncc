@@ -1,8 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <resources>
+    <!--GeneralSize-->
+    <dimen name="one">1dp</dimen>
+    <dimen name="two">1dp</dimen>
+    <dimen name="three">3dp</dimen>
+    <dimen name="four">4dp</dimen>
+    <dimen name="five">5dp</dimen>
+    <dimen name="six">6dp</dimen>
+    <dimen name="seven">7dp</dimen>
+    <dimen name="eight">8dp</dimen>
+    <dimen name="nine">9dp</dimen>
+    <dimen name="ten">10dp</dimen>
+    <dimen name="eleven">11dp</dimen>
+    <dimen name="twelve">12dp</dimen>
+    <dimen name="thirteen">13dp</dimen>
 
-    <dimen name="fab_margin">16dp</dimen>
-    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="Button_Small">40dp</dimen>
+    <dimen name="Button_Medium">55dp</dimen>
+    <dimen name="Button_Large">60dp</dimen>
+
+    <dimen name="EditText_Small">40dp</dimen>
+    <dimen name="EditText_Medium">50dp</dimen>
+    <dimen name="EditText_Large">60dp</dimen>
+
+    <!--TextSize-->
+    <dimen name="text_regular">14dp</dimen>
+    <dimen name="text_medium">18dp</dimen>
+    <dimen name="text_m">16sp</dimen>
+    <dimen name="Text22">22sp</dimen>
+    <dimen name="Text18">18sp</dimen>
+    <dimen name="Text16">16sp</dimen>
+    <dimen name="Text12">12sp</dimen>
+    <dimen name="Text13">13sp</dimen>
+    <dimen name="Text14">14sp</dimen>
+    <dimen name="Text15">15sp</dimen>
+    <dimen name="Text17">17sp</dimen>
+    <dimen name="Text20">20sp</dimen>
+    <dimen name="Text24">24sp</dimen>
+    <dimen name="Text26">26sp</dimen>
+    <dimen name="Text28">28sp</dimen>
+    <dimen name="Text40">40sp</dimen>
+    <dimen name="text_extralarge">24sp</dimen>
+    <dimen name="text_elarge">28sp</dimen>
+    <!--Height-->
+    <dimen name="height_s">30dp</dimen>
+    <dimen name="height_small">35dp</dimen>
+    <dimen name="height_m">40dp</dimen>
+    <dimen name="height_large">60dp</dimen>
+    <dimen name="height_medium">50dp</dimen>
+    <dimen name="height_med">55dp</dimen>
+    <!--Margin-->
+    <dimen name="margin">10dp</dimen>
+    <dimen name="margintwo">15dp</dimen>
+    <dimen name="marginthree">20dp</dimen>
+    <dimen name="marginfour">25dp</dimen>
+    <!--Navigation Drawer Dimen-->
+    <dimen name="tvnavheaderheight">80dp</dimen>
+    <dimen name="tvnavshareiconheight">25dp</dimen>
+    <dimen name="tvnavshareiconwidth">25dp</dimen>
+
+    <dimen name="padding_2dp">2dp</dimen>
+    <dimen name="padding_4dp">4dp</dimen>
+    <dimen name="padding_5dp">5dp</dimen>
+    <dimen name="padding_6dp">6dp</dimen>
+    <dimen name="padding_8dp">8dp</dimen>
+    <dimen name="padding_10dp">10dp</dimen>
+    <dimen name="padding_12dp">12dp</dimen>
+    <dimen name="padding_14dp">14dp</dimen>
+    <dimen name="padding_16dp">16dp</dimen>
+    <dimen name="padding_18dp">18dp</dimen>
+    <dimen name="padding_20dp">20dp</dimen>
+    <dimen name="padding_24dp">24dp</dimen>
+    <dimen name="padding_28dp">28dp</dimen>
+    <dimen name="padding_30dp">30dp</dimen>
+
+    <dimen name="Size_2dp">2dp</dimen>
+
+    <!--Textview width-->
+    <dimen name="tv_width">145dp</dimen>
+
+    <dimen name="TextInpuntLayout_Small">40dp</dimen>
+    <dimen name="TextInpuntLayout_Medium">50dp</dimen>
+    <dimen name="TextInpuntLayout_Large">60dp</dimen>
+
+    <!-- Dynamic Height of Nested Scroll View -->
+    <dimen name="ns_Open_Size">171dp</dimen>
 </resources>
